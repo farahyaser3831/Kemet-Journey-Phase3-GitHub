@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#342415"/>
+      <stop offset="100%" stop-color="#120d09"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="60" y="60" width="1080" height="680" rx="36" fill="none" stroke="#dcb86b" stroke-opacity="0.45" stroke-width="6"/>
+  <path d="M300 610 L470 300 L640 610 Z" fill="#9f7a3f"/>
+  <path d="M520 610 L640 370 L760 610 Z" fill="#cfa658"/>
+  <circle cx="880" cy="220" r="80" fill="#efd089" fill-opacity="0.85"/>
+  <text x="600" y="690" text-anchor="middle" fill="#f0e3bd" font-family="Georgia, serif" font-size="56">Kemet Journey</text>
+  <text x="600" y="745" text-anchor="middle" fill="#d7c299" font-family="Georgia, serif" font-size="28">Image unavailable</text>
+</svg>

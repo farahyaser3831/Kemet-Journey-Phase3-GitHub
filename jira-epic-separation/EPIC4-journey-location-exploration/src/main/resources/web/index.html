@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kemet Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="site-shell">
+        <header class="topbar">
+            <a class="brand" href="#home" aria-label="Kemet Journey">
+                <span class="brand-mark">𓆣</span>
+                <strong>Kemet Journey</strong>
+            </a>
+            <nav class="nav-links">
+                <a href="#home" data-i18n="nav.home"></a>
+                <a href="#explore" data-i18n="nav.explore"></a>
+                <a href="#timeline" data-i18n="nav.timeline"></a>
+                <a href="#regions" data-i18n="nav.regions"></a>
+                <a href="#details" data-i18n="nav.exhibit"></a>
+            </nav>
+            <div class="topbar-actions">
+                <button class="ghost-button auth-button" id="authButton" type="button"></button>
+                <button class="ghost-button" id="favoritesButton" type="button">
+                    <span data-i18n="favorites.title"></span>
+                    <span class="pill" id="favoritesCount">0</span>
+                </button>
+                <button class="ghost-button" id="languageButton" type="button">AR</button>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero" id="home">
+                <div class="hero-landscape reveal">
+                    <div class="hero-copy">
+                        <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+                        <h1 data-i18n="hero.title"></h1>
+                        <p class="hero-text" data-i18n="hero.description"></p>
+                        <div class="hero-actions">
+                            <a class="primary-button" href="#explore" data-i18n="hero.primaryCta"></a>
+                            <a class="secondary-button" href="#timeline" data-i18n="hero.secondaryCta"></a>
+                        </div>
+                        <div class="hero-stats" id="heroStats"></div>
+                    </div>
+                    <div class="hero-surface">
+                        <div class="hero-orb"></div>
+                        <div class="hero-scene">
+                            <div class="hero-scene-card">
+                                <span class="chip" data-i18n="hero.surfaceLabel"></span>
+                                <h2 data-i18n="hero.surfaceTitle"></h2>
+                                <p data-i18n="hero.surfaceText"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="explore-section" id="explore">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow" data-i18n="explore.eyebrow"></p>
+                        <h2 data-i18n="explore.title"></h2>
+                    </div>
+                    <p class="section-text" data-i18n="explore.description"></p>
+                </div>
+
+                <div class="controls-panel">
+                    <label class="search-field">
+                        <span data-i18n="explore.searchLabel"></span>
+                        <input id="searchInput" type="search">
+                    </label>
+                    <label>
+                        <span data-i18n="filters.era"></span>
+                        <select id="eraFilter"></select>
+                    </label>
+                    <label>
+                        <span data-i18n="filters.type"></span>
+                        <select id="typeFilter"></select>
+                    </label>
+                    <label>
+                        <span data-i18n="filters.location"></span>
+                        <select id="locationFilter"></select>
+                    </label>
+                    <button class="ghost-button" id="clearFiltersButton" type="button" data-i18n="filters.clear"></button>
+                </div>
+
+                <div class="results-toolbar">
+                    <div class="results-copy">
+                        <strong id="resultsCount">0</strong>
+                        <span data-i18n="explore.resultsSuffix"></span>
+                    </div>
+                    <button class="ghost-button" id="favoritesOnlyButton" type="button" data-i18n="favorites.filter"></button>
+                </div>
+
+                <div class="monuments-grid" id="monumentsGrid"></div>
+                <div class="empty-state hidden" id="emptyState">
+                    <h3 data-i18n="empty.title"></h3>
+                    <p data-i18n="empty.description"></p>
+                </div>
+            </section>
+
+            <section class="favorites-section" id="favoritesSection">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow" data-i18n="favorites.eyebrow"></p>
+                        <h2 data-i18n="favorites.heading"></h2>
+                    </div>
+                    <p class="section-text" data-i18n="favorites.description"></p>
+                </div>
+                <div class="favorites-grid monuments-grid" id="favoritesGrid"></div>
+                <div class="empty-state hidden" id="favoritesEmpty">
+                    <h3 data-i18n="favorites.emptyTitle"></h3>
+                    <p data-i18n="favorites.emptyDescription"></p>
+                </div>
+            </section>
+
+            <section class="detail-section" id="details">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow" data-i18n="details.eyebrow"></p>
+                        <h2 id="detailName">...</h2>
+                    </div>
+                    <button class="ghost-button" id="detailFavoriteButton" type="button"></button>
+                </div>
+
+                <div class="detail-layout">
+                    <div class="detail-gallery-panel">
+                        <div class="detail-gallery" id="detailGallery"></div>
+                    </div>
+
+                    <div class="detail-content">
+                        <div class="detail-intro">
+                            <p class="detail-subtitle" id="detailSubtitle"></p>
+                            <div class="detail-meta" id="detailMeta"></div>
+                        </div>
+                        <article class="detail-panel">
+                            <h3 data-i18n="details.overview"></h3>
+                            <p id="detailOverview"></p>
+                        </article>
+                        <article class="detail-panel">
+                            <h3 data-i18n="details.history"></h3>
+                            <p id="detailHistory"></p>
+                        </article>
+                        <article class="detail-panel">
+                            <h3 data-i18n="details.matter"></h3>
+                            <p id="detailSignificance"></p>
+                        </article>
+                        <article class="detail-panel accent-panel">
+                            <h3 data-i18n="details.funFact"></h3>
+                            <p id="detailFunFact"></p>
+                        </article>
+                        <article class="detail-panel">
+                            <h3 data-i18n="details.factsTitle"></h3>
+                            <div id="detailFacts"></div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="timeline-section" id="timeline">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow" data-i18n="timeline.eyebrow"></p>
+                        <h2 data-i18n="timeline.title"></h2>
+                    </div>
+                    <p class="section-text" data-i18n="timeline.description"></p>
+                </div>
+                <div class="timeline-scroll" id="timelineRail"></div>
+            </section>
+
+            <section class="map-section" id="regions">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow" data-i18n="map.eyebrow"></p>
+                        <h2 data-i18n="map.title"></h2>
+                    </div>
+                    <p class="section-text" data-i18n="map.description"></p>
+                </div>
+                <div class="map-card">
+                    <div class="egypt-map" id="egyptMap">
+                        <div class="nile-line"></div>
+                    </div>
+                    <div class="region-list" id="regionList"></div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <dialog class="auth-modal" id="authModal">
+        <form class="auth-panel" method="dialog">
+            <div class="auth-header">
+                <div>
+                    <p class="eyebrow" data-i18n="auth.eyebrow"></p>
+                    <h2 data-i18n="auth.title"></h2>
+                </div>
+                <button class="ghost-button" id="closeAuthButton" type="submit" data-i18n="auth.close"></button>
+            </div>
+            <p class="section-text" data-i18n="auth.description"></p>
+            <label class="auth-field">
+                <span data-i18n="auth.nameLabel"></span>
+                <input id="authNameInput" type="text" maxlength="32">
+            </label>
+            <label class="auth-field">
+                <span data-i18n="auth.passwordLabel"></span>
+                <input id="authPasswordInput" type="password" maxlength="64" autocomplete="current-password">
+            </label>
+            <div class="auth-actions">
+                <button class="primary-button" id="saveProfileButton" type="button" data-i18n="auth.save"></button>
+                <button class="secondary-button hidden" id="logoutButton" type="button" data-i18n="auth.logout"></button>
+            </div>
+            <p class="auth-status" id="authStatus"></p>
+        </form>
+    </dialog>
+
+    <template id="monumentCardTemplate">
+        <article class="monument-card reveal">
+            <img alt="" class="monument-image">
+            <div class="monument-card-body">
+                <div class="monument-topline">
+                    <span class="chip monument-era"></span>
+                    <button class="favorite-toggle" type="button" aria-label="toggle favorite">★</button>
+                </div>
+                <h3 class="monument-title"></h3>
+                <p class="monument-description"></p>
+                <div class="monument-tags">
+                    <span class="chip monument-location"></span>
+                    <span class="chip monument-type"></span>
+                </div>
+                <div class="monument-footer">
+                    <span class="monument-date"></span>
+                    <button class="secondary-button monument-open" type="button"></button>
+                </div>
+            </div>
+        </article>
+    </template>
+
+    <script src="/app.js"></script>
+</body>
+</html>
