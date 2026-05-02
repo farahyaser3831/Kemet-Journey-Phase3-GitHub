@@ -23,3 +23,4 @@ Useful code areas:
 - Opening a monument from the timeline: `app.js` function `selectMonument`.
 - Timeline metadata: `MonumentService.java` methods `meta` and `timelineGroup`.
 - API coverage: `ApiIntegrationTest.java` checks that `/api/meta` exposes `timelineGroups`.
+Branch review note: View Historical Timeline.
