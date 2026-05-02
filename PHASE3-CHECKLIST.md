@@ -15,7 +15,7 @@ This checklist maps the Kemet Journey project to the Phase 3 requirements: codin
   - EPIC6: museum/temple detail pages and digital exhibit content.
 - The project builds and runs locally using the included PowerShell scripts:
   - Run: `.\scripts\run.ps1`
-  - Test: `.\scripts\test.ps1`
+  - JUnit Test: `.\scripts\test.ps1`
 
 ## Code Quality Checklist
 
@@ -28,6 +28,7 @@ This checklist maps the Kemet Journey project to the Phase 3 requirements: codin
 
 ## Testing Checklist
 
+- Testing is implemented with JUnit 5 under `src/test/java`.
 - Happy path tested:
   - Monument API returns monument lists.
   - Detail API returns a selected monument.
@@ -38,7 +39,7 @@ This checklist maps the Kemet Journey project to the Phase 3 requirements: codin
 - Negative tests:
   - Unknown monument endpoint is covered by the integration test.
 - Crash check:
-  - `MonumentServiceTest` and `ApiIntegrationTest` pass locally.
+  - JUnit classes `MonumentServiceTest` and `ApiIntegrationTest` pass locally.
 
 ## Review Checklist
 
@@ -57,6 +58,7 @@ Run this before committing:
 Expected output:
 
 ```text
-MonumentServiceTest passed
-ApiIntegrationTest passed
+JUnit Jupiter
+[OK] explorer.tests.MonumentServiceTest
+[OK] explorer.tests.ApiIntegrationTest
 ```
