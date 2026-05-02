@@ -23,3 +23,4 @@ Useful code areas:
 - Location filter options: `app.js` function `populateFilters`.
 - Backend location grouping: `MonumentService.java` method `regionGroup`.
 - API query handling for `location`: `MonumentServer.java` `/api/monuments` handler.
+Branch review note: Explore Monument by Location.
