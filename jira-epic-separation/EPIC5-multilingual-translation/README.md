@@ -21,3 +21,4 @@ Useful code areas:
 - Language switch behavior: `app.js` `bindEvents` language button handler.
 - Applying translated labels and direction: `app.js` functions `applyTranslations`, `getText`, `t`, and `humanize`.
 - Bilingual monument content: `MonumentRepository.java` data records and `Monument.java` localized fields.
+Branch review note: Translate Monument Information into user Language.
