@@ -8,6 +8,7 @@ A modern, interactive tourism website focused on Egyptian monuments and historic
 - Vanilla HTML, CSS, and JavaScript frontend
 - JSON API for monument data, filtering, and search
 - LocalStorage-powered favorites
+- JUnit 5 tests for service and API behavior
 
 ## Features
 
@@ -32,3 +33,5 @@ The app starts on `http://localhost:8080`.
 ```powershell
 ./scripts/test.ps1
 ```
+
+The test script runs JUnit 5 tests. If Maven is installed, it uses `mvn test`; otherwise it downloads the JUnit Platform Console runner into `.junit/` and runs the tests directly.
