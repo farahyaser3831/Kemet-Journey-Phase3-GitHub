@@ -24,3 +24,4 @@ Useful code areas:
 - Filter events and client-side filtering: `app.js` functions `bindEvents`, `updateFilteredMonuments`, `populateFilters`, and `getVisibleMonuments`.
 - Filter API query handling: `MonumentServer.java` in the `/api/monuments` handler.
 - Backend filtering and metadata: `MonumentService.java` methods `findAll` and `meta`.
+Branch review note: View Filtered Result.
